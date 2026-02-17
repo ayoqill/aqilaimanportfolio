@@ -1,3 +1,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Grid on body so it always shows – no component/z-index involved */
+body.grid-bg {
+  min-height: 100vh;
+  background-color: #fff;
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, #d4d4d8 1px, transparent 1px),
+    linear-gradient(to bottom, #d4d4d8 1px, transparent 1px);
+}
+
+@media (prefers-color-scheme: dark) {
+  body.grid-bg {
+    background-color: #000;
+    background-image: linear-gradient(to right, #404040 1px, transparent 1px),
+      linear-gradient(to bottom, #404040 1px, transparent 1px);
+  }
+}
