@@ -2,19 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Grid on body so it always shows – no component/z-index involved */
-body.grid-bg {
+body {
   min-height: 100vh;
-  background-color: #fff;
-  background-size: 40px 40px;
-  background-image: linear-gradient(to right, #d4d4d8 1px, transparent 1px),
-    linear-gradient(to bottom, #d4d4d8 1px, transparent 1px);
-}
+  background-color: #fbfbfd;
 
-@media (prefers-color-scheme: dark) {
-  body.grid-bg {
-    background-color: #000;
-    background-image: linear-gradient(to right, #404040 1px, transparent 1px),
-      linear-gradient(to bottom, #404040 1px, transparent 1px);
-  }
+  /* single-color grid + plus markers */
+  background-image:
+    /* grid (same color for all lines) */
+    linear-gradient(to right, rgba(15,23,42,0.07) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15,23,42,0.07) 1px, transparent 1px),
+
+    /* slightly bigger plus marker */
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cg stroke='rgba(15,23,42,0.22)' stroke-width='1.5'%3E%3Cline x1='120' y1='105' x2='120' y2='135'/%3E%3Cline x1='105' y1='120' x2='135' y2='120'/%3E%3C/g%3E%3C/svg%3E");
+
+  /* smaller squares */
+  background-size:
+    60px 60px,
+    60px 60px,
+    240px 240px;
+
+  background-position: 0 0;
 }

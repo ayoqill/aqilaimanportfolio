@@ -1,3 +1,43 @@
+export function GridFade() {
+  return (
+    <div className="fixed inset-0 z-[9999] pointer-events-none">
+      {/* Left & Right subtle fade */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to right,rgba(251,251,253,0.95) 0%,rgba(251,251,253,0) 20%,rgba(251,251,253,0) 80%,rgba(251,251,253,0.95) 100%)"
+        }}
+      />
+      {/* Top & Bottom soft fade */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to bottom,rgba(251,251,253,0.7) 0%,rgba(251,251,253,0) 15%,rgba(251,251,253,0) 85%,rgba(251,251,253,0.7) 100%)"
+        }}
+      />
+      {/* Very subtle corner vignette */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "radial-gradient(circle at center,transparent 60%,rgba(2,6,23,0.05) 100%)"
+        }}
+      />
+    </div>
+  );
+}
+/**
+ * Fade overlay for grid backgrounds. Place once in your layout/component.
+ */
+export function GridFadeOverlay() {
+  return (
+    <div className="pointer-events-none fixed inset-0 -z-10">
+      {/* stronger edge fade */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(251,251,253,0)_35%,rgba(251,251,253,0.92)_100%)]" />
+      {/* bolder vignette for corners */}
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_50%,rgba(2,6,23,0.10)_100%)]" />
+    </div>
+  );
+}
 import { cn } from "@/lib/utils";
 
 /**
