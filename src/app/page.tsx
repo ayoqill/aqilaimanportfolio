@@ -5,33 +5,32 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 function Navbar({ activeSection }: { activeSection: string }) {
   return (
-    <header className="fixed left-1/2 top-6 z-50 -translate-x-1/2">
-      <nav className="flex items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-3 py-2 shadow-sm backdrop-blur">
+    <header className="fixed left-1/2 top-4 z-50 w-full max-w-lg sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl -translate-x-1/2 px-2">
+      <nav className="flex flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-2 py-2 shadow-sm backdrop-blur justify-center">
         <div className="flex items-center gap-2 px-3">
           <span className="text-lg font-semibold">{'<aa>'}</span>
           <span className="h-6 w-px bg-slate-200" />
         </div>
-
         <a
-          className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeSection === "home" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
+          className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${activeSection === "home" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
           href="#home"
         >
           Home
         </a>
         <a
-          className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeSection === "about" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
+          className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${activeSection === "about" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
           href="#about"
         >
           About
         </a>
         <a
-          className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeSection === "projects" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
+          className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${activeSection === "projects" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
           href="#projects"
         >
           Projects
         </a>
         <a
-          className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeSection === "contact" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
+          className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${activeSection === "contact" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
           href="#contact"
         >
           Contact
@@ -43,7 +42,7 @@ function Navbar({ activeSection }: { activeSection: string }) {
 
 function Hero() {
   return (
-    <section id="home" className="mx-auto max-w-5xl px-6 pt-40 pb-24">
+    <section id="home" className="mx-auto w-full max-w-5xl px-2 pt-32 pb-16 sm:pt-40 sm:pb-24">
       {/* badge */}
       <div className="inline-flex items-center gap-2 rounded-full bg-emerald-50 px-4 py-2 text-sm font-medium text-emerald-700">
         <span className="h-2 w-2 rounded-full bg-emerald-500" />
@@ -51,19 +50,19 @@ function Hero() {
       </div>
 
       {/* title */}
-      <h1 className="mt-8 text-5xl font-extrabold tracking-tight text-slate-900 sm:text-7xl">
+      <h1 className="mt-8 text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 sm:text-7xl break-words">
         Hi there, I am <span className="underline decoration-slate-200 decoration-8 underline-offset-8">Aqil Aiman</span>.
       </h1>
 
       {/* subtitle */}
-      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl whitespace-nowrap">
+      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
         I'm a developer with a foot in both data science and web development. <br/>
         Half data scientist, half web architect. <br/>
         I can turn raw numbers into real impact and craft interfaces that people actually love to use.
       </p>
 
       {/* buttons */}
-      <div className="mt-10 flex flex-wrap gap-4">
+      <div className="mt-10 flex flex-col sm:flex-row flex-wrap gap-4 items-center justify-center sm:justify-start">
         <a
           href="#contact"
           className="rounded-full bg-slate-900 px-8 py-4 text-sm font-semibold text-white shadow-sm hover:bg-slate-800"
@@ -76,7 +75,6 @@ function Hero() {
         >
           View Resume
         </a>
-          {/* Smooth scroll to About section */}
       </div>
     </section>
   );
@@ -140,17 +138,17 @@ export default Page;
 function About() {
   const [showModal, setShowModal] = useState(false);
   return (
-    <section id="about" className="mx-auto max-w-5xl px-6 py-32">
-      <div className="flex flex-col md:flex-row items-center md:items-center gap-12">
+    <section id="about" className="mx-auto w-full max-w-5xl px-1 py-8 sm:px-4 sm:py-14">
+      <div className="flex flex-col md:flex-row items-center md:items-center gap-6 md:gap-12">
         {/* Profile Image in 3D Card */}
         <button
-          className="focus:outline-none"
+          className="focus:outline-none mb-4 md:mb-0 w-full max-w-[220px] sm:max-w-xs"
           onClick={() => setShowModal(true)}
           tabIndex={0}
           aria-label="View profile photo larger"
         >
-          <CardContainer className="inter-var cursor-pointer">
-            <CardBody className="bg-gray-50 relative group/card border-black/[0.1] w-64 h-96 rounded-2xl p-0 border shadow-md transition-transform duration-300 group-hover/card:scale-110 group-hover/card:shadow-2xl">
+          <CardContainer className="inter-var cursor-pointer w-full">
+            <CardBody className="bg-gray-50 relative group/card border-black/[0.1] w-full h-56 sm:w-56 sm:h-80 md:w-64 md:h-96 rounded-2xl p-0 border shadow-md transition-transform duration-300 group-hover/card:scale-110 group-hover/card:shadow-2xl">
               <CardItem translateZ="120" className="w-full h-full">
                 <img
                   src="/images/aqil.jpg"
@@ -162,7 +160,7 @@ function About() {
           </CardContainer>
         </button>
         {/* Description */}
-        <div className="flex-1 flex flex-col justify-center h-full">
+        <div className="flex-1 flex flex-col justify-center h-full text-center md:text-left w-full">
           <h2 className="text-3xl font-bold text-slate-900">About Me</h2>
           <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600">
             I’m passionate about building products that blend data, design, and engineering. 
