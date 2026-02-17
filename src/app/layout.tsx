@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "@/styles/globals.css";
-import { GridFade } from "@/components/ui/GridBackground";
+import { GridBackground } from "@/components/ui/GridBackground";
 import { site } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -16,9 +16,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
-        <GridFade />
+        <div className="fixed inset-0 -z-10">
+          <GridBackground />
+        </div>
+        {/* Subtle fade overlay for readability */}
+        <div className="pointer-events-none fixed inset-0 -z-0">
+          <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/0" />
+        </div>
         <div className="relative min-h-screen">
-          {/* {children} */}
+          {children}
         </div>
       </body>
     </html>
