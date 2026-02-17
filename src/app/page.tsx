@@ -1,5 +1,7 @@
+
 "use client";
 import { useEffect, useState, useRef } from "react";
+import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 function Navbar({ activeSection }: { activeSection: string }) {
   return (
@@ -54,9 +56,9 @@ function Hero() {
       </h1>
 
       {/* subtitle */}
-      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
+      <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl whitespace-nowrap">
         I'm a developer with a foot in both data science and web development. <br/>
-        Half data scientist, half web architect <br/>
+        Half data scientist, half web architect. <br/>
         I can turn raw numbers into real impact and craft interfaces that people actually love to use.
       </p>
 
@@ -136,12 +138,66 @@ function Page() {
 export default Page;
 
 function About() {
+  const [showModal, setShowModal] = useState(false);
   return (
-    <section id="about" className="mx-auto max-w-4xl px-6 py-32">
-      <h2 className="text-3xl font-bold mb-6 text-slate-900">About Me</h2>
-      <p className="text-lg text-slate-700 leading-relaxed">
-        I’m passionate about building products that blend data, design, and engineering. My background in data science and web development lets me bridge the gap between raw numbers and real user experiences. I love working on projects that challenge me to learn and grow, and I’m always looking for new opportunities to collaborate and create.
-      </p>
+    <section id="about" className="mx-auto max-w-5xl px-6 py-32">
+      <div className="flex flex-col md:flex-row items-center md:items-center gap-12">
+        {/* Profile Image in 3D Card */}
+        <button
+          className="focus:outline-none"
+          onClick={() => setShowModal(true)}
+          tabIndex={0}
+          aria-label="View profile photo larger"
+        >
+          <CardContainer className="inter-var cursor-pointer">
+            <CardBody className="bg-gray-50 relative group/card border-black/[0.1] w-64 h-96 rounded-2xl p-0 border shadow-md transition-transform duration-300 group-hover/card:scale-110 group-hover/card:shadow-2xl">
+              <CardItem translateZ="120" className="w-full h-full">
+                <img
+                  src="/images/aqil.jpg"
+                  alt="Aqil Aiman"
+                  className="w-full h-full object-cover rounded-2xl group-hover/card:shadow-2xl group-hover/card:scale-110 transition-transform duration-300"
+                />
+              </CardItem>
+            </CardBody>
+          </CardContainer>
+        </button>
+        {/* Description */}
+        <div className="flex-1 flex flex-col justify-center h-full">
+          <h2 className="text-3xl font-bold text-slate-900">About Me</h2>
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600">
+            I’m passionate about building products that blend data, design, and engineering. 
+            My background in data science and web development lets me bridge the gap between 
+            raw numbers and real user experiences.
+
+            <br /><br />
+
+            I’m currently pursuing Data Science & Computational Intelligence at IIUM, 
+            with a strong interest in data engineering — building reliable data pipelines, 
+            processing large datasets, and preparing data for analytics and machine learning. 
+            I enjoy working on projects that challenge me to grow, and I’m always looking 
+            for opportunities to collaborate and create meaningful impact.
+          </p>
+        </div>
+      </div>
+      {/* Modal for focused image */}
+      {showModal && (
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70" onClick={() => setShowModal(false)}>
+          <div className="relative" onClick={e => e.stopPropagation()}>
+            <img
+              src="/images/aqil.jpg"
+              alt="Aqil Aiman Large"
+              className="w-[350px] h-[500px] object-cover rounded-xl shadow-2xl border-2 border-white transition-transform duration-300"
+            />
+            <button
+              className="absolute top-2 right-2 bg-white/80 rounded-full px-3 py-1 text-black text-lg font-bold shadow"
+              onClick={() => setShowModal(false)}
+              aria-label="Close"
+            >
+              ×
+            </button>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
