@@ -50,7 +50,7 @@ function Hero() {
       </div>
 
       {/* title */}
-      <h1 className="mt-8 text-3xl sm:text-5xl font-extrabold tracking-tight text-slate-900 sm:text-7xl break-words">
+      <h1 className="mt-8 text-3xl font-extrabold tracking-tight text-slate-900 sm:text-7xl break-words">
         Hi there, I am <span className="underline decoration-slate-200 decoration-8 underline-offset-8">Aqil Aiman</span>.
       </h1>
 
