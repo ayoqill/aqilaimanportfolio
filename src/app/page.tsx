@@ -259,23 +259,120 @@ function About() {
         </div>
       </section>
 
-      {/* About 3: Tech Stack (own snapshot, no cert) */}
-      <section className="h-screen snap-start flex items-center justify-center bg-transparent">
-        <div className="mx-auto w-full max-w-5xl px-1 py-8 sm:px-4 sm:py-14 flex flex-col md:flex-row gap-8 md:gap-12">
-          {/* Tech Stack */}
-          <div className="w-full">
-            <h3 className="text-2xl font-bold mb-6">Technologies I Work With</h3>
-            <div className="flex flex-wrap gap-2">
-              {/* Example tech stack, edit as needed */}
-              <span className="rounded-lg border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">React</span>
-              <span className="rounded-lg border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">TypeScript</span>
-              <span className="rounded-lg border border-slate-200 bg-white px-3 py-1 text-sm text-slate-700">TailwindCSS</span>
-              {/* Add/remove as needed */}
+      {/* About 3: Tech Stack (modern minimalist, no card) */}
+      <section id="techstack" className="h-screen snap-start flex items-center justify-center relative w-full">
+        {/* Only grid and noise backgrounds, no blue gradient */}
+        <div className="absolute inset-0 pointer-events-none z-0">
+          <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
+          <div className="absolute inset-0 bg-[url('/images/noise.png')] opacity-5"></div>
+        </div>
+        {/* Minimalist container for content, with max-h and vertical scroll for grid */}
+        <div className="relative z-10 w-full max-w-5xl mx-auto px-2 md:px-4 flex flex-col items-center">
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 md:p-8 flex flex-col items-center w-full max-h-[80vh]">
+            <h3 className="text-2xl font-bold mb-6 md:mb-10 text-center">Tech Stack</h3>
+            <div className="w-full overflow-x-auto">
+              <div className="min-w-[700px] md:min-w-0 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full overflow-y-auto max-h-[60vh] pr-2">
+                {/* Frontend */}
+                <div>
+                  <h4 className="font-semibold mb-3 md:mb-4">Frontend</h4>
+                  <div className="flex flex-wrap gap-3 md:gap-4">
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" label="React" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg" label="Next.js" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" label="TypeScript" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" label="JavaScript" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" label="HTML" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" label="CSS" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/streamlit/streamlit-original.svg" label="Streamlit" />
+                  </div>
+                </div>
+                {/* Backend */}
+                <div>
+                  <h4 className="font-semibold mb-3 md:mb-4">Backend</h4>
+                  <div className="flex flex-wrap gap-3 md:gap-4">
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" label="Node.js" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" label="FastAPI" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" label="Flask" />
+                    <TechIcon src="https://cdn.brandfetch.io/idmg-NaphI/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1766731505202" label="MinIO" />
+                    {/* Removed JWT */}
+                  </div>
+                </div>
+                {/* Data Engineering */}
+                <div>
+                  <h4 className="font-semibold mb-3 md:mb-4">Data Engineering</h4>
+                  <div className="flex flex-wrap gap-3 md:gap-4">
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apacheairflow/apacheairflow-original.svg" label="Apache Airflow" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original-wordmark.svg" label="Apache Spark" />
+                  </div>
+                </div>
+                {/* Databases */}
+                <div>
+                  <h4 className="font-semibold mb-3 md:mb-4">Databases</h4>
+                  <div className="flex flex-wrap gap-3 md:gap-4">
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-original.svg" label="Microsoft SQL Server" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" label="MySQL" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" label="Postgres" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/supabase/supabase-original.svg" label="Supabase" />
+                  </div>
+                </div>
+                {/* Data Science / ML */}
+                <div>
+                  <h4 className="font-semibold mb-3 md:mb-4">DS / ML</h4>
+                  <div className="flex flex-wrap gap-3 md:gap-4">
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" label="Python" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" label="Pandas" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg" label="NumPy" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/matplotlib/matplotlib-original.svg" label="Matplotlib" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/plotly/plotly-original.svg" label="Plotly" />
+                    <TechIcon src="https://cdn.brandfetch.io/idW3VhiylC/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1768218428470" label="Scikit-learn" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" label="TensorFlow" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pytorch/pytorch-original.svg" label="PyTorch" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/keras/keras-original.svg" label="Keras" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" label="OpenCV" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" label="R" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" label="C++" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" label="Java" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" label="Bash" />
+                  </div>
+                </div>
+                {/* Cloud / Platform */}
+                <div>
+                  <h4 className="font-semibold mb-3 md:mb-4">Cloud / Platform</h4>
+                  <div className="flex flex-wrap gap-3 md:gap-4">
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" label="Microsoft Azure" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vercel/vercel-original.svg" label="Vercel" />
+                    {/* Removed AWS */}
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" label="Cloudflare" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" label="Google Cloud" />
+                    <TechIcon src="https://cdn.brandfetch.io/idSUrLOWbH/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668081624532" label="Databricks" />
+                  </div>
+                </div>
+                {/* Tools */}
+                <div className="md:col-span-2">
+                  <h4 className="font-semibold mb-3 md:mb-4">Tools</h4>
+                  <div className="flex flex-wrap gap-3 md:gap-4">
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" label="Git" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" label="GitHub" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" label="Docker" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" label="npm" />
+                    <TechIcon src="https://cdn.brandfetch.io/idVCtIagXj/w/820/h/820/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1764925990591" label="Power BI" />
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
     </>
+  );
+}
+
+// TechIcon component for micro-interactions
+function TechIcon({ src, label }: { src: string; label: string }) {
+  return (
+    <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/70 shadow-sm border border-slate-100 transition-all duration-200 hover:shadow-lg hover:-translate-y-1 hover:rotate-3 hover:ring-2 hover:ring-blue-100">
+      <img src={src} alt={label} className="w-7 h-7" />
+      <span className="text-sm font-medium text-slate-700">{label}</span>
+    </div>
   );
 }
 
@@ -326,6 +423,9 @@ function Page() {
         </section>
         <About />
         {/*
+        <section id="techstack" className="h-screen snap-start flex items-center justify-center bg-transparent">
+          <TechStack />
+        </section>
         <section id="projects" className="h-screen snap-start flex items-center justify-center">
           <Projects />
         </section>
