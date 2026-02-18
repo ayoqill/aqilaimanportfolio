@@ -221,7 +221,7 @@ function About() {
                 <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white border border-blue-500">
                   <span className="h-2 w-2 rounded-full bg-blue-400"></span>
                 </span>
-                  <div className="rounded-2xl border border-yellow-400 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 border-4 border-pulse group-hover:ring-2 group-hover:ring-blue-200 group-hover:shadow-2xl">
+                  <div className="rounded-2xl border-4 border-yellow-400 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 border-pulse group-hover:ring-2 group-hover:ring-blue-200 group-hover:shadow-2xl">
                   <style jsx>{`
                     .border-pulse {
                       animation: borderPulse 2.5s infinite;
@@ -408,7 +408,9 @@ function Page() {
           .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
         if (!visible) return;
         const id = (visible.target as HTMLElement).id;
-        if (id === "about" || id === "education" || id === "techstack") {
+        if (id === "home") {
+          setActiveSection("home");
+        } else if (id === "about" || id === "education" || id === "techstack") {
           setActiveSection("about");
         } else {
           setActiveSection(id);
@@ -416,8 +418,8 @@ function Page() {
       },
       {
         root: main,
-        threshold: [0.25, 0.4, 0.6],
-        rootMargin: "-20% 0px -60% 0px",
+        threshold: [0, 0.25, 0.5, 0.75, 1],
+        rootMargin: "0px",
       }
     );
 
