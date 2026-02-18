@@ -1,6 +1,7 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
+import Projects from "./Projects";
 
 function Navbar({ activeSection }: { activeSection: string }) {
   return (
@@ -433,22 +434,15 @@ function Page() {
   return (
     <div className="min-h-screen text-slate-900">
       <Navbar activeSection={activeSection} />
-      <main ref={mainRef} className="h-screen snap-y snap-mandatory overflow-y-scroll scroll-smooth">
+      <main ref={mainRef} className="h-screen snap-y snap-proximity overflow-y-scroll scroll-smooth">
         <section id="home" className="h-screen snap-start flex items-center justify-center">
           <Hero />
         </section>
         <About />
-        {/*
-        <section id="techstack" className="h-screen snap-start flex items-center justify-center bg-transparent">
-          <TechStack />
-        </section>
-        <section id="projects" className="h-screen snap-start flex items-center justify-center">
-          <Projects />
-        </section>
+        <Projects containerRef={mainRef} />
         <section id="contact" className="h-screen snap-start flex items-center justify-center">
-          <Contact />
+          {/* Contact */}
         </section>
-        */}
       </main>
     </div>
   );
