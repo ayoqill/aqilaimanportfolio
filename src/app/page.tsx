@@ -5,36 +5,36 @@ import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 
 function Navbar({ activeSection }: { activeSection: string }) {
   return (
-    <header className="fixed left-1/2 top-4 z-50 w-full max-w-lg sm:max-w-2xl md:max-w-3xl lg:max-w-4xl xl:max-w-5xl -translate-x-1/2 px-2">
-      <nav className="flex flex-wrap items-center gap-2 rounded-full border border-slate-200 bg-white/80 px-2 py-2 shadow-sm backdrop-blur justify-center">
-        <div className="flex items-center gap-2 px-3">
-          <span className="text-lg font-semibold">{'<aa>'}</span>
-          <span className="h-6 w-px bg-slate-200" />
+    <header className="fixed left-1/2 top-6 z-50 -translate-x-1/2">
+      <nav className="mx-auto flex items-center rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-md backdrop-blur max-w-fit">
+        <span className="text-lg font-semibold px-4">{'<aa>'}</span>
+        <span className="h-6 w-px bg-slate-200 mx-2" />
+        <div className="flex items-center gap-1">
+          <a
+            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeSection === "home" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
+            href="#home"
+          >
+            Home
+          </a>
+          <a
+            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeSection === "about" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
+            href="#about"
+          >
+            About
+          </a>
+          <a
+            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeSection === "projects" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
+            href="#projects"
+          >
+            Projects
+          </a>
+          <a
+            className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeSection === "contact" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
+            href="#contact"
+          >
+            Contact
+          </a>
         </div>
-        <a
-          className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${activeSection === "home" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
-          href="#home"
-        >
-          Home
-        </a>
-        <a
-          className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${activeSection === "about" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
-          href="#about"
-        >
-          About
-        </a>
-        <a
-          className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${activeSection === "projects" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
-          href="#projects"
-        >
-          Projects
-        </a>
-        <a
-          className={`rounded-full px-3 py-2 text-sm font-medium transition-colors ${activeSection === "contact" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
-          href="#contact"
-        >
-          Contact
-        </a>
       </nav>
     </header>
   );
