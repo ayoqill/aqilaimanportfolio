@@ -8,15 +8,15 @@ type Project = {
 };
 
 const row1: Project[] = [
-  { title: "Project One", img: "/projects/p1.png" },
-  { title: "Project Two", img: "/projects/p2.png" },
-  { title: "Project Three", img: "/projects/p3.png" },
+  { title: "Project One", img: "/images/1.jpg" },
+  { title: "Project Two", img: "/images/2.avif" },
+  { title: "Project Three", img: "/images/3.avif" },
 ];
 
 const row2: Project[] = [
-  { title: "Project Four", img: "/projects/p4.png" },
-  { title: "Project Five", img: "/projects/p5.png" },
-  { title: "Project Six", img: "/projects/p6.png" },
+  { title: "Project Four", img: "/images/4.avif" },
+  { title: "Project Five", img: "/images/5.avif" },
+  { title: "Project Six", img: "/images/6.avif" },
 ];
 
 export default function Projects({
@@ -50,8 +50,8 @@ export default function Projects({
             style={{ x: xLeft }}
             className="flex justify-center gap-6"
           >
-            {row1.map((p) => (
-              <ProjectCard key={p.title} {...p} />
+            {row1.map((p, i) => (
+              <ProjectCard key={p.title} {...p} projectNumber={i + 1} />
             ))}
           </motion.div>
 
@@ -60,8 +60,8 @@ export default function Projects({
             style={{ x: xRight }}
             className="flex justify-center gap-6"
           >
-            {row2.map((p) => (
-              <ProjectCard key={p.title} {...p} />
+            {row2.map((p, i) => (
+              <ProjectCard key={p.title} {...p} projectNumber={i + 4} />
             ))}
           </motion.div>
         </div>
@@ -70,9 +70,12 @@ export default function Projects({
   );
 }
 
-function ProjectCard({ title, img }: Project) {
+function ProjectCard({ title, img, projectNumber }: Project & { projectNumber: number }) {
   return (
-    <div className="group w-[360px] rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-xl">
+    <a
+      href={`/projects/${projectNumber}`}
+      className="group w-[360px] rounded-2xl border border-slate-200 bg-white shadow-sm overflow-hidden transition hover:-translate-y-1 hover:shadow-xl block"
+    >
       <div className="aspect-[16/9] w-full overflow-hidden">
         <img
           src={img}
@@ -80,10 +83,6 @@ function ProjectCard({ title, img }: Project) {
           className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
         />
       </div>
-      <div className="p-4">
-        <h3 className="font-semibold text-slate-900">{title}</h3>
-        <p className="text-sm text-slate-500">View project →</p>
-      </div>
-    </div>
+    </a>
   );
 }
