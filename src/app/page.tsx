@@ -57,7 +57,7 @@ function Hero() {
       <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
         I'm a developer with a foot in both data science and web development. <br/>
         Half data scientist, half web architect. <br/>
-        I can turn raw numbers into real impact and craft interfaces that people actually love to use.
+        <span className="whitespace-nowrap">I can turn raw numbers into real impact and craft interfaces that people actually love to use.</span>
       </p>
 
       {/* buttons */}
