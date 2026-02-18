@@ -143,7 +143,7 @@ function About() {
       </section>
 
       {/* About 2: Education (left) & Experience (right) */}
-      <section className="h-screen snap-start flex items-center justify-center bg-transparent">
+      <section id="education" className="h-screen snap-start flex items-center justify-center bg-transparent">
         <div className="mx-auto w-full max-w-5xl px-1 py-8 sm:px-4 sm:py-14 flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Education Timeline + Certifications (scrollable if long) */}
           <div className="md:w-1/2 w-full flex flex-col gap-8 max-h-[80vh] overflow-y-auto pr-2">
@@ -217,16 +217,26 @@ function About() {
           <div className="md:w-1/2 w-full max-h-[80vh] overflow-y-auto pr-2">
             <h3 className="text-2xl font-bold mb-6">Experience</h3>
             <ol className="relative border-l border-x-slate-400 ml-3">
-              <li className="mb-8 ml-6">
+              <li className="mb-8 ml-6 group">
                 <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white border border-blue-500">
                   <span className="h-2 w-2 rounded-full bg-blue-400"></span>
                 </span>
-                <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 hover:ring-2 hover:ring-blue-200">
+                  <div className="rounded-2xl border border-yellow-400 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 border-4 border-pulse group-hover:ring-2 group-hover:ring-blue-200 group-hover:shadow-2xl">
+                  <style jsx>{`
+                    .border-pulse {
+                      animation: borderPulse 2.5s infinite;
+                    }
+                    @keyframes borderPulse {
+                      0% { box-shadow: 0 0 0 0 rgba(255, 221, 51, 0.7); }
+                      50% { box-shadow: 0 0 0 6px rgba(255, 221, 51, 0.2); }
+                      100% { box-shadow: 0 0 0 0 rgba(255, 221, 51, 0.7); }
+                    }
+                  `}</style>
                   <h4 className="font-semibold text-lg">Seeking 6-Month Internship (June/July Start)</h4>
                   <div className="text-slate-500 text-sm mb-1">Open to Data Engineering, Data Analyst, Data Scientist & Related Roles</div>
                   <div className="text-xs text-slate-400">Available: June/July 2026 - Dec 2026</div>
                   <div className="text-slate-600 text-sm mt-2">
-                    Passionate about building robust data pipelines and delivering actionable insights from complex datasets. Eager to contribute to teams focused on data engineering, analytics, or data science. My interests include ETL development, data integration, automation, and scalable data infrastructure. Ready to learn, adapt, and add value in any data-driven environment.
+                    Passionate about building robust data pipelines and delivering actionable insights from complex datasets. Eager to contribute to teams focused on data engineering, analytics, or data science. My interests include ETL development, data integration, automation, and scalable data infrastructure. Ready to learn, adapt and add value in any data-driven environment.
                   </div>
                 </div>
               </li>
@@ -381,37 +391,41 @@ function Page() {
   const mainRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
-    // Treat both About 1 and About 2 as a single 'about' section for highlight
-    const sectionIds = ["home", "about", "projects", "contact"];
     const main = mainRef.current;
     if (!main) return;
-    const handleScroll = () => {
-      let current = "home";
-      const scroll = main.scrollTop;
-      const aboutSection = document.getElementById("about");
-      const about2Section = aboutSection?.nextElementSibling;
-      const aboutStart = aboutSection?.offsetTop ?? 0;
-      const aboutEnd = about2Section ? (about2Section as HTMLElement).offsetTop + (about2Section as HTMLElement).offsetHeight : aboutStart;
-      if (aboutSection && about2Section && scroll >= aboutStart - 100 && scroll < aboutEnd - 100) {
-        current = "about";
-      } else {
-        for (const id of sectionIds) {
-          const el = document.getElementById(id);
-          if (el && main) {
-            const sectionTop = el.offsetTop;
-            const sectionHeight = el.offsetHeight;
-            if (scroll >= sectionTop - sectionHeight / 2 && scroll < sectionTop + sectionHeight / 2) {
-              current = id;
-              break;
-            }
-          }
+
+    const home = document.getElementById("home");
+    const about1 = document.getElementById("about");
+    const about2 = document.getElementById("education");
+    const about3 = document.getElementById("techstack");
+    const projects = document.getElementById("projects");
+    const contact = document.getElementById("contact");
+
+    const obs = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0];
+        if (!visible) return;
+        const id = (visible.target as HTMLElement).id;
+        if (id === "about" || id === "education" || id === "techstack") {
+          setActiveSection("about");
+        } else {
+          setActiveSection(id);
         }
+      },
+      {
+        root: main,
+        threshold: [0.25, 0.4, 0.6],
+        rootMargin: "-20% 0px -60% 0px",
       }
-      setActiveSection(current);
-    };
-    main.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => main.removeEventListener("scroll", handleScroll);
+    );
+
+    [home, about1, about2, about3, projects, contact].forEach((el) => {
+      if (el) obs.observe(el);
+    });
+
+    return () => obs.disconnect();
   }, []);
 
   return (
