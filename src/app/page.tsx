@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState, useRef } from "react";
+import ContactForm from "./ContactForm";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
 import Projects from "./Projects";
 
@@ -442,7 +443,40 @@ function Page() {
         <About />
         <Projects containerRef={mainRef} />
         <section id="contact" className="h-screen snap-start flex items-center justify-center">
-          {/* Contact */}
+          <div className="w-full max-w-5xl mx-auto p-4 flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-center">
+            {/* Left: Contact Form */}
+            <div className="flex-1 w-full max-w-xl">
+              <h2 className="text-4xl font-bold mb-2">Work with Me</h2>
+              <p className="text-lg text-slate-600 mb-8">Have an idea, a question, or just want to say hi? Drop me a message, I’d love to hear from you.</p>
+              <ContactForm />
+            </div>
+            {/* Right: Social/Email Buttons */}
+            <div className="flex-1 w-full max-w-xl flex flex-col items-center justify-center">
+              <div className="flex items-center w-full mb-8">
+                <span className="flex-1 h-px bg-slate-200" />
+                <span className="mx-4 text-slate-500 font-semibold">OR</span>
+                <span className="flex-1 h-px bg-slate-200" />
+              </div>
+              <h3 className="text-2xl font-extrabold text-center mb-8 tracking-tight text-slate-900">You can also reach me via…</h3>
+              <div className="flex flex-col gap-4 w-full">
+                <a href="mailto:your@email.com" className="flex items-center gap-3 px-8 py-5 rounded-2xl border border-slate-200 bg-white/90 shadow-md hover:bg-slate-50 transition group">
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 text-2xl group-hover:bg-indigo-100">📧</span>
+                  <span className="font-semibold text-slate-800 text-base">Email</span>
+                  <span className="ml-auto text-slate-400 group-hover:text-indigo-400">↗</span>
+                </a>
+                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-5 rounded-2xl border border-slate-200 bg-white/90 shadow-md hover:bg-slate-50 transition group">
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-rose-50 text-rose-600 text-2xl group-hover:bg-rose-100">💼</span>
+                  <span className="font-semibold text-slate-800 text-base">LinkedIn</span>
+                  <span className="ml-auto text-slate-400 group-hover:text-rose-400">↗</span>
+                </a>
+                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-5 rounded-2xl border border-slate-200 bg-white/90 shadow-md hover:bg-slate-50 transition group">
+                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-yellow-50 text-yellow-600 text-2xl group-hover:bg-yellow-100">🐙</span>
+                  <span className="font-semibold text-slate-800 text-base">GitHub</span>
+                  <span className="ml-auto text-slate-400 group-hover:text-yellow-400">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
         </section>
       </main>
     </div>
