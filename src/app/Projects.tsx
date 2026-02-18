@@ -40,9 +40,7 @@ export default function Projects({
       <div className="mx-auto w-full max-w-6xl px-4">
         <div className="mb-12 text-center">
           <h2 className="text-3xl font-bold">Featured Projects</h2>
-          <p className="mt-3 text-slate-600">
-            A snapshot of selected work.
-          </p>
+
         </div>
 
         {/* Edge fade mask for premium look */}

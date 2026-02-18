@@ -304,6 +304,7 @@ function About() {
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" label="FastAPI" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" label="Flask" />
                     <TechIcon src="https://cdn.brandfetch.io/idmg-NaphI/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1766731505202" label="MinIO" />
+                    <TechIcon src="https://cdn.brandfetch.io/id8EAnvAAb/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1770040504066" label="Solidity" />
                     {/* Removed JWT */}
                   </div>
                 </div>
@@ -327,7 +328,7 @@ function About() {
                 </div>
                 {/* Data Science / ML */}
                 <div>
-                  <h4 className="font-semibold mb-3 md:mb-4">DS / ML</h4>
+                  <h4 className="font-semibold mb-3 md:mb-4">Data Sc / ML</h4>
                   <div className="flex flex-wrap gap-3 md:gap-4">
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" label="Python" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg" label="Pandas" />
