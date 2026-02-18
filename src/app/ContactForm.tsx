@@ -2,7 +2,14 @@
 import { useState } from "react";
 
 export default function ContactForm() {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    message: "",
+    company: "",      // honeypot
+    ts: Date.now(),    // time trap
+  });
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
@@ -18,9 +25,10 @@ export default function ContactForm() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
       });
-      if (!res.ok) throw new Error("Failed to send message");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) throw new Error(data?.error || "Failed to send message");
       setSuccess(true);
-      setForm({ name: "", email: "", phone: "", message: "" });
+      setForm({ name: "", email: "", phone: "", message: "", company: "", ts: Date.now() });
     } catch (err: any) {
       setError(err.message || "Something went wrong");
     } finally {
@@ -30,14 +38,25 @@ export default function ContactForm() {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
+      {/* Honeypot (keep hidden). Real users won't fill it */}
+      <input
+        type="text"
+        tabIndex={-1}
+        autoComplete="off"
+        className="hidden"
+        value={form.company}
+        onChange={e => setForm(f => ({ ...f, company: e.target.value }))}
+      />
+
       <input
         type="text"
         placeholder="Name"
-        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-lg mb-2"
+        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-lg"
         value={form.name}
         onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
         required
       />
+
       <div className="flex flex-col sm:flex-row gap-4">
         <input
           type="email"
@@ -55,13 +74,15 @@ export default function ContactForm() {
           onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
         />
       </div>
+
       <textarea
         placeholder="Tell me what’s on your mind?"
-        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-lg min-h-[120px]"
+        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-lg min-h-[140px]"
         value={form.message}
         onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
         required
       />
+
       <div className="flex justify-end">
         <button
           type="submit"
@@ -71,7 +92,8 @@ export default function ContactForm() {
           {loading ? "Sending..." : "Send Message"}
         </button>
       </div>
-      {success && <div className="text-green-600 font-medium">Message sent! I'll get back to you soon.</div>}
+
+      {success && <div className="text-green-600 font-medium">Message sent! I’ll get back to you soon.</div>}
       {error && <div className="text-red-600 font-medium">{error}</div>}
     </form>
   );
