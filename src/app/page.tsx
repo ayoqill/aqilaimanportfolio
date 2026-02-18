@@ -155,9 +155,9 @@ function About() {
                     <span className="h-2 w-2 rounded-full bg-pink-500"></span>
                   </span>
                   <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 hover:ring-2 hover:ring-slate-300">
-                    <h4 className="font-semibold text-lg">Bachelor of Computer Science (Hons.)</h4>
-                    <div className="text-slate-500 text-sm mb-1">Universiti Teknologi MARA (UiTM), Shah Alam</div>
-                    <div className="text-xs text-slate-400">FEB 2025 - PRESENT</div>
+                    <h4 className="font-semibold text-lg"> Foundation in Engineering and Computer Science</h4>
+                    <div className="text-slate-500 text-sm mb-1">Centre for Foundation Studies IIUM (CFS IIUM)</div>
+                    <div className="text-xs text-slate-400">August 2021 - August 2022</div>
                   </div>
                 </li>
                 <li className="ml-6">
@@ -165,9 +165,9 @@ function About() {
                     <span className="h-2 w-2 rounded-full bg-pink-500"></span>
                   </span>
                   <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 hover:ring-2 hover:ring-slate-300">
-                    <h4 className="font-semibold text-lg">Diploma in Computer Science</h4>
-                    <div className="text-slate-500 text-sm mb-1">Universiti Teknologi MARA (UiTM), Segamat</div>
-                    <div className="text-xs text-slate-400">SEPT 2019 - FEB 2022</div>
+                    <h4 className="font-semibold text-lg">Bachelor of Computer Science (Hons.)</h4>
+                    <div className="text-slate-500 text-sm mb-1">Data Science and Computational Intelligence | IIUM</div>
+                    <div className="text-xs text-slate-400">October 2022 - Present</div>
                   </div>
                 </li>
               </ol>
@@ -180,7 +180,8 @@ function About() {
                     <span className="h-2 w-2 rounded-full bg-emerald-400"></span>
                   </span>
                   <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl flex items-center gap-4 transition-shadow duration-200 hover:ring-2 hover:ring-emerald-200">
-                    <span className="inline-block bg-slate-100 rounded-lg px-3 py-2 text-slate-700 font-semibold text-sm">CompTIA Data+</span>
+                    <img src="/images/comptia.png" alt="CompTIA Logo" className="w-10 h-10 object-contain rounded-md" />
+                    <span className="text-slate-700 font-semibold text-base">CompTIA Data+</span>
                   </div>
                 </li>
                 {/*
@@ -221,10 +222,12 @@ function About() {
                   <span className="h-2 w-2 rounded-full bg-blue-400"></span>
                 </span>
                 <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 hover:ring-2 hover:ring-blue-200">
-                  <h4 className="font-semibold text-lg">Data Science Intern</h4>
-                  <div className="text-slate-500 text-sm mb-1">Company Name</div>
-                  <div className="text-xs text-slate-400">Jan 2026 - May 2026</div>
-                  <div className="text-slate-600 text-sm mt-2">Worked on data cleaning, feature engineering, and model evaluation for real-world projects.</div>
+                  <h4 className="font-semibold text-lg">Seeking 6-Month Internship (June/July Start)</h4>
+                  <div className="text-slate-500 text-sm mb-1">Open to Data Engineering, Data Analyst, Data Scientist & Related Roles</div>
+                  <div className="text-xs text-slate-400">Available: June/July 2026 - Dec 2026</div>
+                  <div className="text-slate-600 text-sm mt-2">
+                    Passionate about building robust data pipelines and delivering actionable insights from complex datasets. Eager to contribute to teams focused on data engineering, analytics, or data science. My interests include ETL development, data integration, automation, and scalable data infrastructure. Ready to learn, adapt, and add value in any data-driven environment.
+                  </div>
                 </div>
               </li>
               {/*
