@@ -15,7 +15,7 @@ export default function ProjectThree() {
           />
         </div>
         <h1 className="text-3xl sm:text-4xl font-bold mb-2">Crypto Market Data Engineering Pipeline</h1>
-        <h2 className="text-lg sm:text-xl font-medium mb-6 text-zinc-400">Layered ETL & Analytics for Cryptocurrency Markets</h2>
+        <h2 className="text-lg sm:text-xl font-medium mb-6 text-zinc-400">Scalable Data Platform for Cryptocurrency Analytics</h2>
         <hr className="my-6 border-zinc-700" />
         <section className="mb-8">
           <h3 className="text-xl font-semibold mb-2">Overview</h3>
