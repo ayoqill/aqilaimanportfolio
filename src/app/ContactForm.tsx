@@ -37,7 +37,7 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form onSubmit={handleSubmit} className="space-y-5">
       {/* Honeypot (keep hidden). Real users won't fill it */}
       <input
         type="text"
@@ -51,7 +51,7 @@ export default function ContactForm() {
       <input
         type="text"
         placeholder="Name"
-        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-lg"
+        className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-5 py-4 text-lg text-white shadow-sm focus:outline-none focus:ring-4 focus:ring-zinc-600 transition-all placeholder-zinc-400"
         value={form.name}
         onChange={e => setForm(f => ({ ...f, name: e.target.value }))}
         required
@@ -61,7 +61,7 @@ export default function ContactForm() {
         <input
           type="email"
           placeholder="Email Address"
-          className="flex-1 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-lg"
+          className="flex-1 rounded-xl border border-zinc-700 bg-zinc-800 px-5 py-4 text-lg text-white shadow-sm focus:outline-none focus:ring-4 focus:ring-zinc-600 transition-all placeholder-zinc-400"
           value={form.email}
           onChange={e => setForm(f => ({ ...f, email: e.target.value }))}
           required
@@ -69,7 +69,7 @@ export default function ContactForm() {
         <input
           type="text"
           placeholder="Phone Number"
-          className="flex-1 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-lg"
+          className="flex-1 rounded-xl border border-zinc-700 bg-zinc-800 px-5 py-4 text-lg text-white shadow-sm focus:outline-none focus:ring-4 focus:ring-zinc-600 transition-all placeholder-zinc-400"
           value={form.phone}
           onChange={e => setForm(f => ({ ...f, phone: e.target.value }))}
         />
@@ -77,7 +77,7 @@ export default function ContactForm() {
 
       <textarea
         placeholder="Tell me what’s on your mind?"
-        className="w-full rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-lg min-h-[140px]"
+        className="w-full rounded-xl border border-zinc-700 bg-zinc-800 px-5 py-4 text-lg text-white min-h-[140px] shadow-sm focus:outline-none focus:ring-4 focus:ring-zinc-600 transition-all placeholder-zinc-400"
         value={form.message}
         onChange={e => setForm(f => ({ ...f, message: e.target.value }))}
         required
@@ -86,7 +86,7 @@ export default function ContactForm() {
       <div className="flex justify-end">
         <button
           type="submit"
-          className="rounded-full bg-slate-900 px-8 py-4 text-lg font-semibold text-white shadow-sm hover:bg-slate-800 disabled:opacity-60"
+          className="rounded-full bg-white px-10 py-4 text-lg font-bold text-black shadow-xl hover:bg-zinc-200 transition-all duration-200 disabled:opacity-60"
           disabled={loading}
         >
           {loading ? "Sending..." : "Send Message"}

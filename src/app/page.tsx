@@ -442,37 +442,37 @@ function Page() {
         </section>
         <About />
         <Projects containerRef={mainRef} />
-        <section id="contact" className="h-screen snap-start flex items-center justify-center">
+        <section id="contact" className="min-h-screen pt-32 snap-start flex items-center justify-center bg-black">
           <div className="w-full max-w-5xl mx-auto p-4 flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-center">
             {/* Left: Contact Form */}
-            <div className="flex-1 w-full max-w-xl">
-              <h2 className="text-4xl font-bold mb-2">Work with Me</h2>
-              <p className="text-lg text-slate-600 mb-8">Have an idea, a question, or just want to say hi? Drop me a message, I’d love to hear from you.</p>
+            <div className="flex-1 w-full max-w-xl bg-zinc-900 p-10 rounded-2xl shadow-2xl border border-zinc-800">
+              <h2 className="text-5xl font-extrabold mb-3 text-white tracking-tight">Work with Me</h2>
+              <p className="mb-10 text-lg text-zinc-300">Have an idea, a question, or just want to say hi? Drop me a message, I’d love to hear from you.</p>
               <ContactForm />
             </div>
             {/* Right: Social/Email Buttons */}
             <div className="flex-1 w-full max-w-xl flex flex-col items-center justify-center">
               <div className="flex items-center w-full mb-8">
-                <span className="flex-1 h-px bg-slate-200" />
-                <span className="mx-4 text-slate-500 font-semibold">OR</span>
-                <span className="flex-1 h-px bg-slate-200" />
+                <span className="flex-1 h-px bg-zinc-700" />
+                <span className="mx-4 text-zinc-400 font-semibold">OR</span>
+                <span className="flex-1 h-px bg-zinc-700" />
               </div>
-              <h3 className="text-2xl font-extrabold text-center mb-8 tracking-tight text-slate-900">You can also reach me via…</h3>
-              <div className="flex flex-col gap-4 w-full">
-                <a href="mailto:your@email.com" className="flex items-center gap-3 px-8 py-5 rounded-2xl border border-slate-200 bg-white/90 shadow-md hover:bg-slate-50 transition group">
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-indigo-50 text-indigo-600 text-2xl group-hover:bg-indigo-100">📧</span>
-                  <span className="font-semibold text-slate-800 text-base">Email</span>
-                  <span className="ml-auto text-slate-400 group-hover:text-indigo-400">↗</span>
+              <h3 className="text-3xl font-extrabold text-center mb-8 tracking-tight text-white">You can also reach me via…</h3>
+              <div className="flex flex-col gap-6 w-full">
+                <a href="mailto:aqilaiman058@gmail.com" className="flex items-center gap-5 bg-zinc-900 p-7 rounded-2xl shadow-xl border border-zinc-800 hover:bg-zinc-800 transition-all duration-200 group">
+                  <span className="bg-zinc-800 p-4 rounded-full group-hover:bg-zinc-700 transition-colors"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm0 0l8 8 8-8" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
+                  <span className="font-semibold text-xl text-white">Email</span>
+                  <span className="ml-auto text-zinc-400 group-hover:text-white transition-colors"><svg width="22" height="22" fill="none" viewBox="0 0 20 20"><path d="M7 13l5-5m0 0l-5-5m5 5H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
                 </a>
-                <a href="https://www.linkedin.com/in/yourprofile" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-5 rounded-2xl border border-slate-200 bg-white/90 shadow-md hover:bg-slate-50 transition group">
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-rose-50 text-rose-600 text-2xl group-hover:bg-rose-100">💼</span>
-                  <span className="font-semibold text-slate-800 text-base">LinkedIn</span>
-                  <span className="ml-auto text-slate-400 group-hover:text-rose-400">↗</span>
+                <a href="https://linkedin.com/in/aqilaiman260" target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 bg-zinc-900 p-7 rounded-2xl shadow-xl border border-zinc-800 hover:bg-zinc-800 transition-all duration-200 group">
+                  <span className="bg-zinc-800 p-4 rounded-full group-hover:bg-zinc-700 transition-colors"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v6h-4v-6a2 2 0 00-4 0v6h-4v-6a6 6 0 016-6zM2 9h4v12H2z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
+                  <span className="font-semibold text-xl text-white">LinkedIn</span>
+                  <span className="ml-auto text-zinc-400 group-hover:text-white transition-colors"><svg width="22" height="22" fill="none" viewBox="0 0 20 20"><path d="M7 13l5-5m0 0l-5-5m5 5H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
                 </a>
-                <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer" className="flex items-center gap-3 px-8 py-5 rounded-2xl border border-slate-200 bg-white/90 shadow-md hover:bg-slate-50 transition group">
-                  <span className="inline-flex items-center justify-center w-9 h-9 rounded-xl bg-yellow-50 text-yellow-600 text-2xl group-hover:bg-yellow-100">🐙</span>
-                  <span className="font-semibold text-slate-800 text-base">GitHub</span>
-                  <span className="ml-auto text-slate-400 group-hover:text-yellow-400">↗</span>
+                <a href="https://github.com/ayoqill" target="_blank" rel="noopener noreferrer" className="flex items-center gap-5 bg-zinc-900 p-7 rounded-2xl shadow-xl border border-zinc-800 hover:bg-zinc-800 transition-all duration-200 group">
+                  <span className="bg-zinc-800 p-4 rounded-full group-hover:bg-zinc-700 transition-colors"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.867 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.112-4.555-4.951 0-1.093.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.593 1.028 2.686 0 3.848-2.338 4.695-4.566 4.944.359.309.678.919.678 1.852 0 1.336-.012 2.417-.012 2.747 0 .267.18.577.688.48C19.135 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
+                  <span className="font-semibold text-xl text-white">GitHub</span>
+                  <span className="ml-auto text-zinc-400 group-hover:text-white transition-colors"><svg width="22" height="22" fill="none" viewBox="0 0 20 20"><path d="M7 13l5-5m0 0l-5-5m5 5H3" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
                 </a>
               </div>
             </div>
