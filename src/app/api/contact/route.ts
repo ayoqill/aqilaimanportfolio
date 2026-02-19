@@ -103,8 +103,17 @@ export const POST = async (req: Request) => {
     });
 
     return new Response(JSON.stringify({ ok: true }), { status: 200 });
-  } catch {
-    return new Response(JSON.stringify({ error: "Failed to send." }), { status: 500 });
+  } catch (err: any) {
+    console.error("CONTACT_API_ERROR:", err);
+    return new Response(
+      JSON.stringify({
+        error:
+          err?.message ||
+          err?.response?.data?.message ||
+          "Failed to send.",
+      }),
+      { status: 500 }
+    );
   }
 // ...existing code...
 }
