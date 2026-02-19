@@ -304,7 +304,7 @@ function About() {
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" label="Node.js" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/fastapi/fastapi-original.svg" label="FastAPI" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flask/flask-original.svg" label="Flask" />
-                    <TechIcon src="https://cdn.brandfetch.io/idmg-NaphI/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1766731505202" label="MinIO" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" label="Java" />
                     <TechIcon src="https://cdn.brandfetch.io/id8EAnvAAb/theme/dark/logo.svg?c=1bxid64Mup7aczewSAYMX&t=1770040504066" label="Solidity" />
                     {/* Removed JWT */}
                   </div>
@@ -315,6 +315,8 @@ function About() {
                   <div className="flex flex-wrap gap-3 md:gap-4">
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apacheairflow/apacheairflow-original.svg" label="Apache Airflow" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/apachespark/apachespark-original-wordmark.svg" label="Apache Spark" />
+                    <TechIcon src="https://cdn.brandfetch.io/idmg-NaphI/w/400/h/400/theme/dark/icon.jpeg?c=1bxid64Mup7aczewSAYMX&t=1766731505202" label="MinIO" />
+                    <TechIcon src="https://cdn.brandfetch.io/idSUrLOWbH/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668081624532" label="Databricks" />
                   </div>
                 </div>
                 {/* Databases */}
@@ -343,8 +345,6 @@ function About() {
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opencv/opencv-original.svg" label="OpenCV" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/r/r-original.svg" label="R" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" label="C++" />
-                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" label="Java" />
-                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" label="Bash" />
                   </div>
                 </div>
                 {/* Cloud / Platform */}
@@ -356,7 +356,6 @@ function About() {
                     {/* Removed AWS */}
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cloudflare/cloudflare-original.svg" label="Cloudflare" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecloud/googlecloud-original.svg" label="Google Cloud" />
-                    <TechIcon src="https://cdn.brandfetch.io/idSUrLOWbH/theme/dark/symbol.svg?c=1bxid64Mup7aczewSAYMX&t=1668081624532" label="Databricks" />
                   </div>
                 </div>
                 {/* Tools */}
@@ -367,6 +366,7 @@ function About() {
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" label="GitHub" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" label="Docker" />
                     <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/npm/npm-original-wordmark.svg" label="npm" />
+                    <TechIcon src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bash/bash-original.svg" label="Bash" />
                     <TechIcon src="https://cdn.brandfetch.io/idVCtIagXj/w/820/h/820/theme/dark/logo.png?c=1bxid64Mup7aczewSAYMX&t=1764925990591" label="Power BI" />
                   </div>
                 </div>
