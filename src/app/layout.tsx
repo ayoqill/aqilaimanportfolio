@@ -23,7 +23,7 @@ export default function RootLayout({
         <div className="pointer-events-none fixed inset-0 -z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/0" />
         </div>
-        <div className="relative min-h-screen">
+        <div className="relative min-h-[100dvh] overflow-x-hidden">
           {children}
         </div>
       </body>

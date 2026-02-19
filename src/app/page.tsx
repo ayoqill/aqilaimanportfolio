@@ -59,7 +59,9 @@ function Hero() {
       <p className="mt-6 max-w-3xl text-lg leading-relaxed text-slate-600 sm:text-xl">
         I'm a developer with a foot in both data science and web development. <br/>
         Half data scientist, half web architect. <br/>
-        <span className="whitespace-nowrap">I can turn raw numbers into real impact and craft interfaces that people actually love to use.</span>
+        <span className="sm:whitespace-nowrap break-words">
+          I can turn raw numbers into real impact and craft interfaces that people actually love to use.
+        </span>
       </p>
 
       {/* buttons */}
@@ -86,7 +88,7 @@ function About() {
   return (
     <>
       {/* About 1: Image and Description */}
-      <section id="about" className="h-screen snap-start flex items-center justify-center">
+      <section id="about" className="min-h-[100dvh] md:h-screen md:snap-start flex items-center justify-center">
         <div className="mx-auto w-full max-w-5xl px-1 py-8 sm:px-4 sm:py-14 flex flex-col md:flex-row items-center md:items-center gap-6 md:gap-12">
           {/* Profile Image in 3D Card */}
           <button
@@ -145,10 +147,10 @@ function About() {
       </section>
 
       {/* About 2: Education (left) & Experience (right) */}
-      <section id="education" className="h-screen snap-start flex items-center justify-center bg-transparent">
+      <section id="education" className="min-h-[100dvh] md:h-screen md:snap-start flex items-center justify-center bg-transparent">
         <div className="mx-auto w-full max-w-5xl px-1 py-8 sm:px-4 sm:py-14 flex flex-col md:flex-row gap-8 md:gap-12">
           {/* Education Timeline + Certifications (scrollable if long) */}
-          <div className="md:w-1/2 w-full flex flex-col gap-8 max-h-[80vh] overflow-y-auto pr-2">
+          <div className="md:w-1/2 w-full flex flex-col gap-8 md:max-h-[80vh] md:overflow-y-auto md:pr-2">
             <div>
               <h3 className="text-2xl font-bold mb-6">Education</h3>
               <ol className="relative border-l border-x-slate-400 ml-3">
@@ -216,7 +218,7 @@ function About() {
             </div>
           </div>
           {/* Experience Timeline (scrollable if long) */}
-          <div className="md:w-1/2 w-full max-h-[80vh] overflow-y-auto pr-2">
+          <div className="md:w-1/2 w-full md:max-h-[80vh] md:overflow-y-auto md:pr-2">
             <h3 className="text-2xl font-bold mb-6">Experience</h3>
             <ol className="relative border-l border-x-slate-400 ml-3">
               <li className="mb-8 ml-6 group">
@@ -272,7 +274,7 @@ function About() {
       </section>
 
       {/* About 3: Tech Stack (modern minimalist, no card) */}
-      <section id="techstack" className="h-screen snap-start flex items-center justify-center relative w-full">
+      <section id="techstack" className="min-h-[100dvh] md:h-screen md:snap-start flex items-center justify-center relative w-full">
         {/* Only grid and noise backgrounds, no blue gradient */}
         <div className="absolute inset-0 pointer-events-none z-0">
           <div className="absolute inset-0 bg-[url('/images/grid.svg')] opacity-10"></div>
@@ -282,8 +284,8 @@ function About() {
         <div className="relative z-10 w-full max-w-5xl mx-auto px-2 md:px-4 flex flex-col items-center">
           <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 md:p-8 flex flex-col items-center w-full max-h-[80vh]">
             <h3 className="text-2xl font-bold mb-6 md:mb-10 text-center">Tech Stack</h3>
-            <div className="w-full overflow-x-auto">
-              <div className="min-w-[700px] md:min-w-0 grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-10 w-full overflow-y-auto max-h-[60vh] pr-2">
+            <div className="w-full">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 w-full md:overflow-y-auto md:max-h-[60vh] md:pr-2">
                 {/* Frontend */}
                 <div>
                   <h4 className="font-semibold mb-3 md:mb-4">Frontend</h4>
@@ -436,13 +438,22 @@ function Page() {
   return (
     <div className="min-h-screen text-slate-900">
       <Navbar activeSection={activeSection} />
-      <main ref={mainRef} className="h-screen snap-y snap-proximity overflow-y-scroll scroll-smooth">
-        <section id="home" className="h-screen snap-start flex items-center justify-center">
+      <main
+        ref={mainRef}
+        className="h-[100dvh] overflow-y-auto scroll-smooth md:snap-y md:snap-proximity"
+      >
+        <section
+          id="home"
+          className="min-h-[100dvh] md:h-screen md:snap-start flex items-center justify-center pt-24 md:pt-0"
+        >
           <Hero />
         </section>
         <About />
         <Projects containerRef={mainRef} />
-        <section id="contact" className="min-h-screen pt-32 snap-start flex items-center justify-center bg-black">
+        <section
+          id="contact"
+          className="min-h-[100dvh] md:snap-start pt-24 md:pt-32 flex items-center justify-center bg-black"
+        >
           <div className="w-full max-w-5xl mx-auto p-4 flex flex-col md:flex-row gap-12 md:gap-20 items-center justify-center">
             {/* Left: Contact Form */}
             <div className="flex-1 w-full max-w-xl bg-zinc-900 p-10 rounded-2xl shadow-2xl border border-zinc-800">
