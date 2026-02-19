@@ -24,7 +24,7 @@ export default function ProjectSix() {
           </p>
         </section>
         <section className="mb-8">
-          <h3 className="text-xl font-semibold mb-2">What Makes This Project Strong</h3>
+          <h3 className="text-xl font-semibold mb-2">What I Did</h3>
           <div className="mb-4">
             <h4 className="font-semibold">1️⃣ Time-Series Engineering</h4>
             <ul className="list-disc pl-6 text-zinc-300 space-y-1">
@@ -50,13 +50,6 @@ export default function ProjectSix() {
               <li>LSTM achieved the most consistent performance across pollutants</li>
             </ul>
           </div>
-          <div className="mb-4">
-            <h4 className="font-semibold">4️⃣ Deployment Component</h4>
-            <ul className="list-disc pl-6 text-zinc-300 space-y-1">
-              <li>Built an Air Pollution Forecasting API interface</li>
-              <li>Project is production-ready, not just research</li>
-            </ul>
-          </div>
         </section>
         <section className="mb-8">
           <h3 className="text-xl font-semibold mb-2">Tools & Tech Stack</h3>
@@ -69,7 +62,6 @@ export default function ProjectSix() {
             <li>Matplotlib / Seaborn</li>
             <li>Random Forest (feature importance)</li>
             <li>Time-series sliding window engineering</li>
-            <li>REST API / Prediction interface</li>
           </ul>
         </section>
         <section className="mb-8">
@@ -87,17 +79,7 @@ export default function ProjectSix() {
             <li>End-to-end ML pipeline</li>
           </ul>
         </section>
-        <section className="mb-8">
-          <h3 className="text-xl font-semibold mb-2">Why This Project Is Strong for Data Science Role</h3>
-          <ul className="list-disc pl-6 text-zinc-300 space-y-1">
-            <li>Real-world dataset handling</li>
-            <li>Strong EDA</li>
-            <li>Multiple model experimentation</li>
-            <li>Hyperparameter tuning</li>
-            <li>Deployment mindset</li>
-            <li>Performance evaluation understanding</li>
-          </ul>
-        </section>
+        
         <hr className="my-8 border-zinc-700" />
         {/* Navigation */}
         <nav className="flex justify-between items-center mt-8">
