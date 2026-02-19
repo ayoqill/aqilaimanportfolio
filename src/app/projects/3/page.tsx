@@ -21,17 +21,17 @@ export default function ProjectThree() {
           <h3 className="text-xl font-semibold mb-2">Overview</h3>
           <p className="mb-4 text-zinc-300">
             Built an end-to-end data engineering pipeline to ingest cryptocurrency market data from a public API, transform it through structured layers, and generate analytical metrics using scheduled workflows. The system separates raw data storage from cleaned and derived datasets for reliability and reproducibility.
-            <div className="mt-4">
-              - <a
-                  href="https://github.com/ayoqill/Crypto-data-pipeline"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-zinc-400 underline hover:text-white transition"
-                >
-                  Crypto Data Pipeline Repo
-                </a>
-            </div>
           </p>
+          <div className="mt-4">
+            - <a
+                href="https://github.com/ayoqill/Crypto-data-pipeline"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-zinc-400 underline hover:text-white transition"
+              >
+                Crypto Data Pipeline Repo
+              </a>
+          </div>
         </section>
         <section className="mb-8">
           <h3 className="text-xl font-semibold mb-2">What It Does</h3>

@@ -28,7 +28,7 @@ export default function ProjectTwo() {
           <h3 className="text-xl font-semibold mb-2">Overview</h3>
           <p className="mb-4 text-zinc-300">
             Built an end-to-end Spotify data pipeline using <span className="text-white">PySpark on Azure Databricks</span>.
-            It follows a <span className="text-white">Bronze–Silver–Gold (Medallion)</span> architecture: raw ingestion,
+            It follows a <span className="text-white">Bronze – Silver – Gold (Medallion)</span> architecture: raw ingestion,
             cleaned Delta tables, and analytics-ready models. The final datasets power an interactive{" "}
             <span className="text-white">Power BI dashboard</span> for insights on tracks, artists, and listening trends.
             <br />
