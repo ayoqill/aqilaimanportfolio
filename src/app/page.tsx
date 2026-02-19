@@ -71,7 +71,7 @@ function Hero() {
           Work with Me
         </a>
         <a
-          href="/resume.pdf"
+          href="/Aqil%20Aiman%20Resume.pdf"
           className="rounded-full border border-slate-300 bg-white px-8 py-4 text-sm font-semibold text-slate-900 shadow-sm hover:bg-slate-50"
         >
           View Resume
