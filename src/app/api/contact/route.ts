@@ -94,11 +94,10 @@ export const POST = async (req: Request) => {
     }
 
     await resend.emails.send({
-      from: "Portfolio <onboarding@resend.dev>", // later: change to your verified domain
+      from: "Portfolio <onboarding@resend.dev>",
       to,
       subject: `New message from ${name}`,
       replyTo: email,
-      react: ContactEmail({ name, email, phone, message }),
       text: `Name: ${name}\nEmail: ${email}\nPhone: ${phone || "-"}\n\n${message}`,
     });
 
