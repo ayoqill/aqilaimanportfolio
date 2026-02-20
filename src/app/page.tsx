@@ -1,4 +1,5 @@
 "use client";
+import CircleIconButton from "@/components/ui/CircleIconButton";
 import { useEffect, useState, useRef } from "react";
 import ContactForm from "./ContactForm";
 import { CardBody, CardContainer, CardItem } from "@/components/ui/3d-card";
@@ -485,6 +486,31 @@ function Page() {
           </div>
         </section>
       </main>
+      {/* Floating bottom-right social buttons */}
+      <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end gap-2">
+        <div className="flex gap-3">
+          <CircleIconButton
+            label="GitHub"
+            href="#"
+            icon={<svg className="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.867 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.529 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.339-2.22-.253-4.555-1.112-4.555-4.951 0-1.093.39-1.987 1.029-2.686-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.397.1 2.65.64.699 1.028 1.593 1.028 2.686 0 3.848-2.338 4.695-4.566 4.944.359.309.678.919.678 1.852 0 1.336-.012 2.417-.012 2.747 0 .267.18.577.688.48C19.135 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z" stroke="currentColor" strokeWidth="1.8" strokeLinejoin="round"/></svg>}
+          />
+          <CircleIconButton
+            label="Email"
+            href="#"
+            icon={<svg className="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M4 6h16v12H4V6Zm0 0l8 7 8-7" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+          />
+          <CircleIconButton
+            label="LinkedIn"
+            href="#"
+            icon={<svg className="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M4 9h4v11H4V9Zm2-5a2 2 0 110 4 2 2 0 010-4Zm6 5h4v2c.6-1.2 2-2.2 4-2.2 3 0 4 2 4 5V20h-4v-5c0-1.5-.2-3-2-3s-2.5 1.4-2.5 3V20h-4V9Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+          />
+          <CircleIconButton
+            label="WhatsApp"
+            href="#"
+            icon={<svg className="h-5 w-5" viewBox="0 0 24 24" fill="none"><path d="M20 11.5a8 8 0 10-14.8 4.1L4 21l5.6-1.4A8 8 0 0020 11.5Z" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>}
+          />
+        </div>
+      </div>
     </div>
   );
 }
