@@ -154,20 +154,26 @@ function About() {
                   <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white border border-pink-600">
                     <span className="h-2 w-2 rounded-full bg-pink-500"></span>
                   </span>
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 hover:ring-2 hover:ring-slate-300">
-                    <h4 className="font-semibold text-lg"> Foundation in Engineering and Computer Science</h4>
-                    <div className="text-slate-500 text-sm mb-1">Centre for Foundation Studies IIUM (CFS IIUM)</div>
-                    <div className="text-xs text-slate-400">August 2021 - August 2022</div>
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 hover:ring-2 hover:ring-slate-300 flex items-center gap-4">
+                    <img src="/images/iium.png" alt="IIUM Logo" className="w-10 h-10 object-contain rounded-md" />
+                    <div>
+                      <h4 className="font-semibold text-lg"> Foundation in Engineering and Computer Science</h4>
+                      <div className="text-slate-500 text-sm mb-1">Centre for Foundation Studies IIUM (CFS IIUM)</div>
+                      <div className="text-xs text-slate-400">August 2021 - August 2022</div>
+                    </div>
                   </div>
                 </li>
                 <li className="ml-6">
                   <span className="absolute -left-3 flex h-6 w-6 items-center justify-center rounded-full bg-white border border-pink-600">
                     <span className="h-2 w-2 rounded-full bg-pink-500"></span>
                   </span>
-                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 hover:ring-2 hover:ring-slate-300">
-                    <h4 className="font-semibold text-lg">Bachelor of Computer Science (Hons.)</h4>
-                    <div className="text-slate-500 text-sm mb-1">Data Science and Computational Intelligence | IIUM</div>
-                    <div className="text-xs text-slate-400">October 2022 - Present</div>
+                  <div className="rounded-2xl border border-slate-200 bg-slate-50 p-4 shadow-xl transition-shadow duration-200 hover:ring-2 hover:ring-slate-300 flex items-center gap-4">
+                    <img src="/images/iium.png" alt="IIUM Logo" className="w-10 h-10 object-contain rounded-md" />
+                    <div>
+                      <h4 className="font-semibold text-lg">Bachelor of Computer Science (Hons.)</h4>
+                      <div className="text-slate-500 text-sm mb-1">Data Science and Computational Intelligence | IIUM</div>
+                      <div className="text-xs text-slate-400">October 2022 - Present</div>
+                    </div>
                   </div>
                 </li>
               </ol>
