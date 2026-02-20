@@ -283,10 +283,10 @@ function About() {
         </div>
         {/* Minimalist container for content, with max-h and vertical scroll for grid */}
         <div className="relative z-10 w-full max-w-5xl mx-auto px-2 md:px-4 flex flex-col items-center">
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 md:p-8 flex flex-col items-center w-full max-h-[80vh] overflow-hidden">
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 md:p-8 flex flex-col items-center w-full h-[80vh] max-h-[80vh] overflow-hidden">
             <h3 className="text-2xl font-bold mb-6 md:mb-10 text-center">Tech Stack</h3>
             <div className="w-full">
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 w-full md:overflow-y-auto md:max-h-[60vh] md:pr-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 w-full overflow-y-auto max-h-[60vh] pr-1 sm:pr-2" style={{ WebkitOverflowScrolling: "touch" }}>
                 {/* Frontend */}
                 <div>
                   <h4 className="font-semibold mb-3 md:mb-4">Frontend</h4>
