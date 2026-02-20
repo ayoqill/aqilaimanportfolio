@@ -1,4 +1,9 @@
 import type { Metadata } from "next";
+export const viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+};
 import "@/styles/globals.css";
 import { GridBackground } from "@/components/ui/GridBackground";
 import { site } from "@/config/site";

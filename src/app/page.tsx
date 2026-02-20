@@ -6,11 +6,12 @@ import Projects from "./Projects";
 
 function Navbar({ activeSection }: { activeSection: string }) {
   return (
-    <header className="fixed left-1/2 top-6 z-50 -translate-x-1/2">
-      <nav className="mx-auto flex items-center rounded-full border border-slate-200 bg-white/80 px-4 py-2 shadow-md backdrop-blur max-w-fit">
-        <span className="text-lg font-semibold px-4">{'<aa>'}</span>
-        <span className="h-6 w-px bg-slate-200 mx-2" />
-        <div className="flex items-center gap-1">
+    <header className="fixed left-1/2 top-6 z-50 -translate-x-1/2 w-[calc(100%-24px)] max-w-3xl">
+      <nav className="flex items-center rounded-full border border-slate-200 bg-white/80 px-3 py-2 shadow-md backdrop-blur w-full">
+        <span className="text-lg font-semibold px-3 shrink-0">{'<aa>'}</span>
+        <span className="h-6 w-px bg-slate-200 mx-2 shrink-0" />
+        {/* mobile: can scroll instead of overflow */}
+        <div className="flex items-center gap-1 overflow-x-auto whitespace-nowrap [-webkit-overflow-scrolling:touch] scrollbar-hide w-full">
           <a
             className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${activeSection === "home" ? "bg-slate-100 text-slate-900" : "text-slate-500 hover:text-slate-900"}`}
             href="#home"
@@ -282,7 +283,7 @@ function About() {
         </div>
         {/* Minimalist container for content, with max-h and vertical scroll for grid */}
         <div className="relative z-10 w-full max-w-5xl mx-auto px-2 md:px-4 flex flex-col items-center">
-          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 md:p-8 flex flex-col items-center w-full max-h-[80vh]">
+          <div className="bg-white/80 backdrop-blur-md rounded-2xl shadow-xl border border-slate-100 p-4 md:p-8 flex flex-col items-center w-full max-h-[80vh] overflow-hidden">
             <h3 className="text-2xl font-bold mb-6 md:mb-10 text-center">Tech Stack</h3>
             <div className="w-full">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 md:gap-10 w-full md:overflow-y-auto md:max-h-[60vh] md:pr-2">
@@ -384,9 +385,9 @@ function About() {
 // TechIcon component for micro-interactions
 function TechIcon({ src, label }: { src: string; label: string }) {
   return (
-    <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/70 shadow-sm border border-slate-100 transition-all duration-200 hover:shadow-lg hover:-translate-y-1 hover:rotate-3 hover:ring-2 hover:ring-blue-100">
-      <img src={src} alt={label} className="w-7 h-7" />
-      <span className="text-sm font-medium text-slate-700">{label}</span>
+    <div className="flex items-center gap-2 px-4 py-2 rounded-xl bg-white/70 shadow-sm border border-slate-100 max-w-full min-w-0 w-full sm:w-auto transition-all duration-200 hover:shadow-lg sm:hover:-translate-y-1 sm:hover:rotate-3 hover:ring-2 hover:ring-blue-100">
+      <img src={src} alt={label} className="w-7 h-7 shrink-0" />
+      <span className="text-sm font-medium text-slate-700 truncate min-w-0">{label}</span>
     </div>
   );
 }
