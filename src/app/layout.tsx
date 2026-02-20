@@ -4,8 +4,10 @@ export const viewport = {
   initialScale: 1,
   viewportFit: "cover",
 };
+
 import "@/styles/globals.css";
 import { GridBackground } from "@/components/ui/GridBackground";
+import CustomCursor from "@/components/ui/CustomCursor";
 import { site } from "@/config/site";
 
 export const metadata: Metadata = {
@@ -20,17 +22,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className="antialiased">
+      <body className="antialiased cursor-none">
         <div className="fixed inset-0 -z-10">
           <GridBackground />
         </div>
+
         {/* Subtle fade overlay for readability */}
         <div className="pointer-events-none fixed inset-0 -z-0">
           <div className="absolute inset-0 bg-gradient-to-b from-white/80 via-white/60 to-white/0" />
         </div>
+
         <div className="relative min-h-[100dvh] overflow-x-hidden">
           {children}
         </div>
+
+        {/* Custom cursor on top */}
+        <CustomCursor />
       </body>
     </html>
   );
