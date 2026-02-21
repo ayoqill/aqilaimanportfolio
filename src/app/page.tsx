@@ -470,7 +470,7 @@ function Page() {
                 <span className="mx-4 text-zinc-400 font-semibold">OR</span>
                 <span className="flex-1 h-px bg-zinc-700" />
               </div>
-              <h3 className="text-3xl font-extrabold text-center mb-8 tracking-tight text-white">You can also reach me via…</h3>
+              <h3 className="text-3xl font-extrabold text-center mb-8 tracking-tight text-white">You can also reach me via</h3>
               <div className="flex flex-col gap-6 w-full">
                 <a href="mailto:aqilaiman058@gmail.com" className="flex items-center gap-5 bg-zinc-900 p-7 rounded-2xl shadow-xl border border-zinc-800 hover:bg-zinc-800 transition-all duration-200 group">
                   <span className="bg-zinc-800 p-4 rounded-full group-hover:bg-zinc-700 transition-colors"><svg width="28" height="28" fill="none" viewBox="0 0 24 24"><path d="M4 4h16v16H4V4zm0 0l8 8 8-8" stroke="#fff" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/></svg></span>
